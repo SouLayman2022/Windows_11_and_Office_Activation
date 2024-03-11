@@ -26,6 +26,8 @@
 
 To run the scripts in unattended mode, check [here](https://massgrave.dev/command_line_switches.html)
 
+Link to extras : https://massgrave.dev/genuine-installation-media.html
+
 ```
 Latest Version: 2.5
 Release date: 16-Nov-2023
