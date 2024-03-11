@@ -26,6 +26,7 @@
 
 To run the scripts in unattended mode, check [here](https://massgrave.dev/command_line_switches.html)
 
+Deactivate win 11 updates steps : https://www.easeus.com/knowledge-center/stop-windows-11-update.html
 Link to extras : https://massgrave.dev/genuine-installation-media.html
 
 ```
