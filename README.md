@@ -29,7 +29,7 @@ To run the scripts in unattended mode, check [here](https://massgrave.dev/comman
 ### Deactivate win 11 updates steps : 
 -   Link : https://www.easeus.com/knowledge-center/stop-windows-11-update.html</br>
 Or :
--   Method 1:
+-   <span style="color:green; background-color: lightgray;">Method 1:</span>
 -   Steps:
 -   Press Windows + R, type services.msc, and press Enter.
 -   In the Services window, scroll down and locate Windows Update.
