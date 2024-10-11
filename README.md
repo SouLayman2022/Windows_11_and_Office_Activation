@@ -56,7 +56,7 @@ If you want to disable automatic Windows 11 updates, follow these methods below.
 
 ## **Method 3: Use Command-Line to Disable Updates**
 
-You can also use the Command Prompt to stop and disable Windows Update services.
+Use the Command Prompt to stop and disable Windows Update services.
 
 ### Method 1:
 sc stop wuauserv
@@ -71,7 +71,8 @@ sc config bits start= disabled
 sc config dosvc start= disabled
 
 ### Method 3:
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoUpdate /t REG_DWORD /d 1 /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoUpdate /t REG_DWORD /d 1 /f </br>
+
 
 ```
 Latest Version: 2.5
