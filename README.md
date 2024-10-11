@@ -27,6 +27,38 @@
 To run the scripts in unattended mode, check [here](https://massgrave.dev/command_line_switches.html)
 
 Deactivate win 11 updates steps : https://www.easeus.com/knowledge-center/stop-windows-11-update.html
+Or :
+Method 1:
+Steps:
+Press Windows + R, type services.msc, and press Enter.
+In the Services window, scroll down and locate Windows Update.
+Right-click on Windows Update and select Properties.
+In the General tab, find the Startup type dropdown and set it to Disabled.
+Click Stop to halt the service if it’s currently running, then click OK.
+
+Method 2:
+Steps:
+Press Windows + R, type gpedit.msc, and press Enter.
+Navigate to the following path:
+Computer Configuration > Administrative Templates > Windows Components > Windows Update > Manage updates offered from Windows Update
+Double-click Configure Automatic Updates.
+Select Disabled, then click Apply and OK.
+
+Method 3:
+Steps: ( write commands, keep same order !)
+-   Method 1:
+    sc stop wuauserv
+    sc config wuauserv start= disabled
+    Method 2:
+    net stop wuauserv
+    net stop bits
+    net stop dosvc
+    sc config wuauserv start= disabled
+    sc config bits start= disabled
+    sc config dosvc start= disabled
+    Method 3:
+    reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoUpdate /t REG_DWORD /d 1 /f
+
 Link to extras : https://massgrave.dev/genuine-installation-media.html
 
 ```
