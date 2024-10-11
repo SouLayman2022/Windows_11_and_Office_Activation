@@ -26,41 +26,52 @@
 
 To run the scripts in unattended mode, check [here](https://massgrave.dev/command_line_switches.html)
 
-### Deactivate win 11 updates steps : 
--   Link : https://www.easeus.com/knowledge-center/stop-windows-11-update.html</br>
-Or :
--   <span style="color:green; background-color: lightgray;">Method 1:</span>
--   Steps:
--   Press Windows + R, type services.msc, and press Enter.
--   In the Services window, scroll down and locate Windows Update.
--   Right-click on Windows Update and select Properties.
--   In the General tab, find the Startup type dropdown and set it to Disabled.
--   Click Stop to halt the service if it’s currently running, then click OK.
+# Deactivate Windows 11 Updates - Steps
 
--   Method 2:
--   Steps:
--   Press Windows + R, type gpedit.msc, and press Enter.
--   Navigate to the following path:
--   Computer Configuration > Administrative Templates > Windows Components > Windows Update > Manage updates offered from Windows Update
--   Double-click Configure Automatic Updates.
--   Select Disabled, then click Apply and OK.
+If you want to disable automatic Windows 11 updates, follow these methods below. You can also refer to this [link](https://www.easeus.com/knowledge-center/stop-windows-11-update.html) for more information.
 
--   Method 3:
--   Steps: ( write commands, keep same order !)
-   -   Method 1:
-   -   sc stop wuauserv
-   -   sc config wuauserv start= disabled
-   -   Method 2:
-   -   net stop wuauserv
-   -   net stop bits
-   -   net stop dosvc
-   -   sc config wuauserv start= disabled
-   -   sc config bits start= disabled
-   -   sc config dosvc start= disabled
-   -   Method 3:
-   -   reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoUpdate /t REG_DWORD /d 1 /f
+---
 
-### Link to extras : https://massgrave.dev/genuine-installation-media.html
+## **Method 1: Disable Windows Update Service**
+
+### Steps:
+1. Press `Windows + R`, type `services.msc`, and press Enter.
+2. In the **Services** window, scroll down and locate **Windows Update**.
+3. Right-click on **Windows Update** and select **Properties**.
+4. In the **General** tab, find the **Startup type** dropdown and set it to **Disabled**.
+5. Click **Stop** to halt the service if it’s currently running, then click **OK**.
+
+---
+
+## **Method 2: Use Group Policy Editor**
+
+### Steps:
+1. Press `Windows + R`, type `gpedit.msc`, and press Enter.
+2. Navigate to:
+   `Computer Configuration > Administrative Templates > Windows Components > Windows Update > Manage updates offered from Windows Update`
+3. Double-click **Configure Automatic Updates**.
+4. Select **Disabled**, then click **Apply** and **OK**.
+
+---
+
+## **Method 3: Use Command-Line to Disable Updates**
+
+You can also use the Command Prompt to stop and disable Windows Update services.
+
+### Method 1:
+sc stop wuauserv
+sc config wuauserv start= disabled
+
+### Method 2:
+net stop wuauserv
+net stop bits
+net stop dosvc
+sc config wuauserv start= disabled
+sc config bits start= disabled
+sc config dosvc start= disabled
+
+### Method 3:
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoUpdate /t REG_DWORD /d 1 /f
 
 ```
 Latest Version: 2.5
